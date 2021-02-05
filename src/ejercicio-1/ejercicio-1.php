@@ -9,7 +9,9 @@
 
 <body>
         <?php
-        include "header-2.php";
+        include "../header-2.php";
+        include_once "precalculos-ej-1.php";
+        new PreCalculosEj1();
         ?>
         <div>
                 <h1>Ejercicio 1</h1>
@@ -74,7 +76,7 @@
         </p>
         <big><big><br>
                         Yo aprendo...</big></big>
-        <form action="ejercicio-1.php" method="post">
+        <form action="solucion-ej-1.php" method="post">
                 <table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
                         <tbody>
                                 <tr>
@@ -429,44 +431,9 @@
 
         </form>
         <br>
-        <?php
-        include "shared.php";
-        include "database.php";
-        if ($_POST['submit']) {
-                $database = new Database();
-                $conn = $database->connect();
 
-                // Este apartado se recolectan las variable que el usuario ingresó para hacer el calculo
-                // se suma para obtener los valor de EC, OR, CA y EA que serán utilizados en el algoritmo
-
-                $EC = $_POST['c5'] + $_POST['c9'] + $_POST['c13'] + $_POST['c17'] + $_POST['c25'] + $_POST['c29'];
-                $OR = $_POST['c2'] + $_POST['c10'] + $_POST['c22'] + $_POST['c26'] + $_POST['c30'] + $_POST['c34'];
-                $CA = $_POST['c7'] + $_POST['c11'] + $_POST['c15'] + $_POST['c19'] + $_POST['c31'] + $_POST['c35'];
-                $EA = $_POST['c4'] + $_POST['c12'] + $_POST['c24'] + $_POST['c28'] + $_POST['c32'] + $_POST['c36'];
-
-                $rows = $database->getDataExercise($conn, "recintoestilo");
-
-                $bestResult = null;
-                $style = null;
-                $array = array($CA, $EC, $EA, $OR);
-
-                // Este fragmento de código se encarga de llamar al algoritmo de Euclides y hacer la estimación
-                // Utilizando los datos suministrados por el usuario.
-                // Por último muestra en pantalla el estilo de Aprendizaje que posee el usuario según los datos suministrados.
-                while ($row = $rows->fetch_assoc()) {
-                        $comparisonArray = array($row['ca'], $row['ec'], $row['ea'], $row['ors']);
-                        $result = euclides($array, $comparisonArray);
-                        if ($bestResult == null || $bestResult <= $result) {
-                                $bestResult = $result;
-                                $style = $row['estilo'];
-                        }
-                }
-
-                echo "<p>Estilo: $style</p>";
-        }
-        ?>
         <br>
-        <a href="../index.php">Volver</a>
+        <a href="../../index.php">Volver</a>
 </body>
 
 </html>

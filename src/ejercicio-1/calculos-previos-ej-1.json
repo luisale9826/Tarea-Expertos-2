@@ -1,0 +1,23 @@
+{
+  "values": { "CA": "16", "EC": "14", "EA": "15", "OR": "17" },
+  "styles": {
+    "ACOMODADOR": "69",
+    "DIVERGENTE": "52",
+    "ASIMILADOR": "41",
+    "CONVERGENTE": "60"
+  },
+  "rows": "222",
+  "m": 4,
+  "probStyles": {
+    "probACOMODADOR": 0.3108108108108108,
+    "probDIVERGENTE": 0.23423423423423423,
+    "probASIMILADOR": 0.18468468468468469,
+    "probCONVERGENTE": 0.2702702702702703
+  },
+  "probValues": {
+    "probVCA": 0.0625,
+    "probVEC": 0.07142857142857142,
+    "probVEA": 0.06666666666666667,
+    "probVOR": 0.058823529411764705
+  }
+}
