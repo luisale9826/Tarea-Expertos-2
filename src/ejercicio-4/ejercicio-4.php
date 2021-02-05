@@ -38,10 +38,7 @@
         <input type="submit" value="Calcular" name="submit">
     </form>
 
-    <a href="../../index.php">Volver</a>
-    <script>
-    
-    </script>
+    <a href="javascript:history.back();">Volver</a>
 </body>
 
 </html>

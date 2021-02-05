@@ -433,7 +433,7 @@
         <br>
 
         <br>
-        <a href="../../index.php">Volver</a>
+        <a href="javascript:history.back();">Volver</a>
 </body>
 
 </html>
