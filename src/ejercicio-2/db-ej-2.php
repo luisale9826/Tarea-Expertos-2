@@ -30,4 +30,21 @@ class DBEj2 {
         $conn->close();
         return null;
     }
+
+    public function getCountClass($conn)
+    {
+        $classes = array('Beginner', 'Intermediate', 'Advanced');
+        $countClass = [];
+        foreach ($classes as $value) {
+            $sql = "SELECT COUNT(*) as '{$value}' FROM `profesores` WHERE (class = '{$value}')";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $countClass[$value] = $row[$value];
+                }
+            }
+        }
+        $conn->close();
+        return $countClass;
+    }
 }

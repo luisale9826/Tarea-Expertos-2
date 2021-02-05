@@ -18,7 +18,7 @@
     </div>
     <form name="final" action="ejercicio-2.php" method="post">
         <br>
-        Escriba su Promedio:<input type="number" min="1" name="promedio"><br>
+        Escriba su Promedio:<input type="number" name="promedio"><br>
         Estilo:<select name="estilo" value="estilo">
         <option value="averiguar">Averiguar</option>
             <option value="ACOMODADOR">ACOMODADOR</option>
